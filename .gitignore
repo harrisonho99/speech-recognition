@@ -2,3 +2,6 @@
 *.flac
 *.wav
 *.aiff
+*.mp3
+credentials.json
+.vscode/
