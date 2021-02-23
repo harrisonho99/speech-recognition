@@ -31,5 +31,5 @@ speak("start talk")
 term = get_audio()
 if "hello" in term:
     speak("hi there")
-elif "your name" in text:
+elif "your name" in term:
     speak("My name is Harrison")
