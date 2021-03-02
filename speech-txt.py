@@ -4,12 +4,17 @@ import playsound
 import time
 from gtts import gTTS
 
+language = {"english": "en", "vietnamese": "vi",
+            "french": "fr", "dutch": "nl", "chinese_spl": "zh-CN", "korean": "ko"}
 
-def speak(text):
-    tts = gTTS(text=text, lang="en")
+
+def speak():
+    text = input("enter terms: ")
+    tts = gTTS(text, lang=language["vietnamese"])
     filename = "speech.mp3"
     tts.save(filename)
     playsound.playsound(filename)
+    os.remove(filename)
 
 
 def get_audio():
@@ -27,9 +32,9 @@ def get_audio():
     return said
 
 
-speak("start talk")
-term = get_audio()
-if "hello" in term:
-    speak("hi there")
-elif "your name" in term:
-    speak("My name is Harrison")
+speak()
+# speak = get_audio()
+# if "hello" in term:
+# speak("hi there")
+# elif "your name" in term:
+# speak("My name is Harrison")
